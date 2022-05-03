@@ -89,4 +89,6 @@ router.delete(
   productsProjectsController.deleteProductFromProject
 );
 
+router.get('/', (res, req) => res.send('Hello world!'));
+
 module.exports = router;
