@@ -21,7 +21,7 @@ class DocumentDAO {
   }
 
   async downloadProjectFile(id) {
-    const response = await db('documents').select('document').where({
+    const response = await db('documents').select('name', 'document').where({
       id: id,
       isDeleted: null,
     });
