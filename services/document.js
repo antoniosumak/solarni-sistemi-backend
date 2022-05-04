@@ -10,10 +10,10 @@ class DocumentService {
   async getAllProjectDocuments(id) {
     const response = await documentDao.getAllProjectDocuments(id);
 
-    response.forEach(async (document, index) => {
-      const base64Document = document.document;
-      response[index].document = base64Document.toString('base64');
-    });
+    // response.forEach(async (document, index) => {
+    //   const base64Document = document.document;
+    //   response[index].document = base64Document.toString('base64');
+    // });
 
     return response;
   }
