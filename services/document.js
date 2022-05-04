@@ -23,6 +23,7 @@ class DocumentService {
     base64Document = response.document;
     response.document = base64Document.toString('base64');
 
+    console.log('RESPONSE', response);
     return response;
   }
 
