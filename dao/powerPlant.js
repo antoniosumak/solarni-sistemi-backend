@@ -18,10 +18,10 @@ class PowerPlantDAO {
         id,
         name,
         power_plant_type_id,
-        power,
         price,
+        power,
       },
-      ['id', 'name', 'power_plant_type_id', 'power', 'price']
+      ['id', 'name', 'power_plant_type_id', 'price', 'power']
     );
 
     return returningId;
