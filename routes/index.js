@@ -65,6 +65,10 @@ router.post(
   documentController.createDocument
 );
 router.get('/api/documents/:id', documentController.getAllProjectDocuments);
+router.get(
+  '/api/documents/download/:id/',
+  documentController.downloadProjectFile
+);
 router.delete('/api/documents/:id', documentController.deleteProject);
 
 //Projects

@@ -18,6 +18,12 @@ class DocumentService {
     return response;
   }
 
+  async downloadProjectFile(id) {
+    const [response] = await documentDao.downloadProjectFile(id);
+    const base64Document = response.document;
+    return base64Document.toString('base64');
+  }
+
   deleteDocument(id) {
     return documentDao.deleteDocument(id);
   }

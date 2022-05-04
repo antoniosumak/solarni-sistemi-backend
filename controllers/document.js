@@ -27,6 +27,17 @@ class DocumentController {
     }
   }
 
+  async downloadProjectFile(req, res) {
+    try {
+      const document = await documentService.downloadProjectFile(req.params.id);
+
+      res.status(200).send(document);
+    } catch (error) {
+      console.log(error);
+      res.status(500).json(error);
+    }
+  }
+
   async deleteProject(req, res) {
     try {
       const id = await documentService.deleteDocument(req.params.id);

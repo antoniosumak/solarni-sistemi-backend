@@ -20,6 +20,15 @@ class DocumentDAO {
     return response;
   }
 
+  async downloadProjectFile(id) {
+    const response = await db('documents').select('document').where({
+      id: id,
+      isDeleted: null,
+    });
+
+    return response;
+  }
+
   async deleteDocument(id) {
     const isDeleted = true;
 
