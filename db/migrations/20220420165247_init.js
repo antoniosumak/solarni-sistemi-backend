@@ -34,6 +34,7 @@ exports.up = function (knex) {
       table.bigIncrements('id').notNullable().primary();
       table.string('name', 50).notNullable();
       table.float('power').notNullable();
+      table.float('price').notNullable();
       table.timestamps('created', true);
       table.bigInteger('power_plant_type_id').unsigned().notNullable();
       table.boolean('isDeleted');

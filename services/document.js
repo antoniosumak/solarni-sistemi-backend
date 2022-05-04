@@ -20,7 +20,7 @@ class DocumentService {
 
   async downloadProjectFile(id) {
     const [response] = await documentDao.downloadProjectFile(id);
-    base64Document = response.document;
+    const base64Document = response.document;
     response.document = base64Document.toString('base64');
 
     console.log('RESPONSE', response);

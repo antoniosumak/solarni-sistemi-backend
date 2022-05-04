@@ -1,25 +1,27 @@
 const db = require('../db/db');
 
 class PowerPlantDAO {
-  async createPowerPlant(name, power, power_plant_type_id) {
+  async createPowerPlant(name, power, power_plant_type_id, price) {
     const [id] = await db('power_plants').insert({
       name,
       power_plant_type_id,
       power,
+      price,
     });
 
     return id;
   }
 
-  async updatePowerPlant(id, name, power_plant_type_id, power) {
+  async updatePowerPlant(id, name, power_plant_type_id, power, price) {
     const returningId = await db('power_plants').where('id', id).update(
       {
         id,
         name,
         power_plant_type_id,
         power,
+        price,
       },
-      ['id', 'name', 'power_plant_type_id', 'power']
+      ['id', 'name', 'power_plant_type_id', 'power', 'price']
     );
 
     return returningId;
