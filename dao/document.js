@@ -12,7 +12,7 @@ class DocumentDAO {
   }
 
   async getAllProjectDocuments(id) {
-    const response = await db('documents').select('name').where({
+    const response = await db('documents').select('id', 'name').where({
       project_id: id,
       isDeleted: null,
     });
